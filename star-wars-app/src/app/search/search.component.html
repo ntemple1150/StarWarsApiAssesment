@@ -1,0 +1,9 @@
+<form [formGroup]="apiSearch" (ngSubmit)="onGet()">
+  <select name="searchType" formControlName="searchType" id="searchType" required>
+    <option *ngFor="let search of searchTypes" value="{{ search.value }}">{{ search.view }}</option>
+  </select>
+  <input type="text" id="search" formControlName="searchWord" required>
+  <button type="submit">Find It!</button>
+</form>
+
+<p>{{ _result | json }}</p>
